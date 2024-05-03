@@ -85,13 +85,13 @@ class appItem extends Component{
   }
 
    onGetvalue=()=>{
-    if(eCommercelistdata>1000){
-      this.setState({eCommercelistdata:eCommercelist.price})
-    }
+   const filteritem=eCommercelist.filter(eachitem=>eachitem.price>=1000)
+    return filterItem;
    }
     
     render(){
         const {eCommercelist}=this.state;
+        const{filteritem}=this.state;
         const{productName,price,rating,discount,availability}=eCommercelist
         return(
 
@@ -102,7 +102,8 @@ class appItem extends Component{
             <p className="rating">{rating}</p>
             <p className="disconut">{discount}</p>
             <p className="availability">{discount}</p>
-            <button onClick={this.onGetvalue}></button>
+            <button type='submit" onClick={this.onGetvalue}>{fitleritems}</button>
+            
           </div>
 
           
